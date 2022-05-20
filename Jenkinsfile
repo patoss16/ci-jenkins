@@ -25,5 +25,15 @@ pipeline{
              sh 'mvn install -DskipTests'
             }
         }
+        stage('INTERGRATION'){
+            steps {
+             sh 'mvn verify -DSkipUnitTest'
+            }
+        }
+        stage('UNIT TEST'){
+            steps {
+             sh 'mvn test'
+            }
+        }
    }
 }
