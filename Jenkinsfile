@@ -35,5 +35,11 @@ pipeline{
              sh 'mvn test'
             }
         }
+        stage('Slack it'){
+            steps {
+                slackSend channel: '#aws-project', 
+                          message: 'Build and Tested successfully'
+            }
+        }
    }
 }
