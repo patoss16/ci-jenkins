@@ -1,15 +1,18 @@
 pipeline{
     agent any
-   /* tools{
+    /*tools{
         maven "maven3"
-    }
+    }*/
     environment {
-        NEXUS_VERSION =
-        NEXUS_REPO =
-        NEXUS_URL =
-        NEXUS_CREDENTIAL_ID
+        SNAP_REPO = "maven-snapshots"
+        NEXUS_USER="admin"
+        NEXUS_PASS="Benashou1980"
+        RELEASE_REPO="ci-release"
+        CENTRAL_REPO="maven-central1"
+        NEXUS_GRP_REPO="maven-group"
+        NEXUSIP = "172.31.41.3"
+        NEXUSPORT = "8081"
     }
-   */
    stages{
        stage('Fetch code'){
            steps{
@@ -24,6 +27,3 @@ pipeline{
         }
    }
 }
-
-
-
