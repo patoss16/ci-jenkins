@@ -17,6 +17,11 @@ pipeline{
                url: 'https://github.com/patoss16/ci-jenkins.git'
            }
        }
+       stage('BUILD'){
+            steps {
+             sh 'mvn install -DskipTests'
+            }
+        }
    }
 }
 
